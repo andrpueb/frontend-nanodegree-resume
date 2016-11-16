@@ -1,3 +1,19 @@
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+  color: #FF6138;
+}
+
+
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  color: #FF6138;
+}
+
+
 body,
 div,
 ul,
@@ -10,12 +26,13 @@ h4,
 h5,
 h6 {
   padding:0;
-  margin:0;
-  font-family: "Roboto", sans-serif;
+  margin:0 !important; /*overriding Bootstrap*/
+  font-family: 'Antic', sans-serif;
 }
 
 .clear-fix {
-  overflow: auto;
+  /*changed with fixed width*/
+  /*overflow: auto;*/
 }
 
 .education-entry,
@@ -26,10 +43,14 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #BEEB9F !important;
   line-height: 48px;
   display: inline;
+  font-weight: lighter;
+  font-family: 'Julius Sans One', sans-serif;
 }
+
+
 
 h2 {
   font-weight: bold;
@@ -101,7 +122,15 @@ a {
 
 #skills-h3 {
   color: #f5ae23;
-  display: none;
+}
+
+#skills li{
+  align-items: center;
+}
+
+#skills p{
+  text-align: center;
+  color: white;
 }
 
 .orange {
@@ -112,9 +141,9 @@ a {
   color: #f5ae23;
 }
 
-.white-text {
+.social-text {
   font-weight: bold;
-  color: #fff;
+  color: #D1DBBD;
 }
 
 .gray {
@@ -129,7 +158,13 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-image: url("../images/lines.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  height: auto;
 }
 
 .flex-box {
@@ -137,8 +172,13 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-end;
   padding: 10px;
+}
+
+.flex-box li{
+  background-color: rgba(25,52,65, 0.5);
+  margin: 1em !important;
 }
 
 .flex-column {
@@ -181,6 +221,7 @@ span {
   #lets-connect {
     margin-top: 5%;
   }
+
 }
 
 @media only screen and (max-width:900px) {
@@ -218,4 +259,55 @@ span {
   .biopic {
     display: block;
   }
+}
+
+/*Added style*/
+
+.role {
+  color: #FFFAD5;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.skill{
+  width: 70px !important;
+  text-align: center;
+  padding: 0 10px 0 0;
+  margin: 10px;
+}
+
+.skillLogo{
+  text-align: center;
+  width: 6em;
+}
+
+.hoverSkill{
+  width: 6.5em !important;
+}
+
+#workExperience, #projects, #education  {
+  padding: 2% 10%;
+}
+
+
+#workExperience{
+  box-shadow: inset 0px 1px 3px 3px rgba(0,0,0,0.75);
+}
+
+#education{
+  box-shadow: inset 0px 1px 3px 3px rgba(0,0,0,0.75);
+}
+
+#projects{
+  background-image: url('../images/3dback.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#projects img{
+  max-width: 20em;
 }
