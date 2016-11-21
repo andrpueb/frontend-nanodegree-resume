@@ -13,7 +13,7 @@ This is empty on purpose! Your code to build the resume will go here.
      "email" : "andresfpuentes@gmail.com",
      "github" : "andrpueb",
      "twitter" : "andrpueb",
-     "location" : "London, UK"
+     "location" : "London",
    },
    "skills" : [ "css3", "html5", "javascript", "jquery", "bootstrap", "git", "gulp"]
  };
@@ -22,16 +22,21 @@ This is empty on purpose! Your code to build the resume will go here.
    "schools" : [
      {
        "name" : "Escuela Colombiana de Ingenieria",
-       "city" : "Bogota, Colombia",
+       "city" : "Bogota",
        "major" : "Electronic Engineering",
        "graduationYear" : "2007"
    },
    {
        "name" : "Politecnico Grancolombiano",
-       "city" : "Bogota, Colombia",
+       "city" : "Bogota",
        "major" : "International Business",
        "graduationYear" : "2012"
-     }
+    },{
+      "name" : "LSI",
+      "city" : "Auckland",
+      "major" : "English for Business",
+      "graduationYear" : "2011"
+    }
 
    ],
    "onlineCourses" : [
@@ -173,13 +178,14 @@ bio.display = function(){
 
 
      education.onlineCourses.display = function(){
-       $('#education').append(HTMLonlineClasses);
+       $("#education").append(HTMLonlineClasses);
        for (var i=0; i < education.onlineCourses.length; i++){
+         $("#education").append(HTMLonlineStart);
          var formattedOnlineTitle = HTMLonlineTitle.replace("%data%" , education.onlineCourses[i].title);;
          var formattedOnlineSchool = HTMLonlineSchool.replace("%data%" , education.onlineCourses[i].school);
          var formattedOnlineDates = HTMLonlineDates.replace("%data%" , education.onlineCourses[i].dates);
-         var formattedOnlineUrl = HTMLonlineURL.replace("%data%" , education.onlineCourses[i].url)
-         $("#education").append(formattedOnlineTitle, formattedOnlineSchool, formattedOnlineDates, formattedOnlineUrl);
+         var formattedOnlineUrl = HTMLonlineURL.replace("%data%" , education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
+         $(".online-entry:last").append(formattedOnlineTitle, formattedOnlineSchool, formattedOnlineDates, formattedOnlineUrl);
        }
      }
      education.onlineCourses.display();
