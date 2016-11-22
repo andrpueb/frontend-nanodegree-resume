@@ -138,7 +138,6 @@ function initializeMap() {
       locations.push(school.city);
     });
 
-    console.log (locations);
 
     // iterates through work locations and appends each location to
     // the locations array. Note that forEach is used for array iteration

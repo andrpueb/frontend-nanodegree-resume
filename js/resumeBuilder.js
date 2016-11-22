@@ -6,7 +6,7 @@ This is empty on purpose! Your code to build the resume will go here.
  var bio = {
    "name" : "Andres Puentes",
    "role" : "Front End Web Developer",
-   "welcomeMessage" : "Hi! I am Andres Puentes, a London based Junior Web Developer who has been learning all the magic of web development for the past 2 years, I am here ",
+   "welcomeMessage" : "Hi! I am Andres Puentes, a London based Junior Web Developer who has been learning all the magic of web development for the past 2 year, contact me to talk about your project! ",
    "biopic" : "images/me.jpg",
    "contacts" : {
      "mobile" : "+447864968719",
@@ -22,18 +22,18 @@ This is empty on purpose! Your code to build the resume will go here.
    "schools" : [
      {
        "name" : "Escuela Colombiana de Ingenieria",
-       "city" : "Bogota",
+       "city" : "Bogota, Colombia",
        "major" : "Electronic Engineering",
        "graduationYear" : "2007"
    },
    {
        "name" : "Politecnico Grancolombiano",
-       "city" : "Bogota",
+       "city" : "Bogota, Colombia",
        "major" : "International Business",
        "graduationYear" : "2012"
     },{
       "name" : "LSI",
-      "city" : "Auckland",
+      "city" : "Auckland, New Zealand",
       "major" : "English for Business",
       "graduationYear" : "2011"
     }
@@ -94,31 +94,35 @@ This is empty on purpose! Your code to build the resume will go here.
    ]
  };
 
+bio.contacts.display = function(){
+  var formattedName = HTMLheaderName.replace("%data%", bio.name);
+  var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+  var formattedEducationName = HTMLschoolName.replace("%data%", education.lastSchool);
+  var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
+  var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+  var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+  var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+  var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+  var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+  $("#header").prepend(formattedRole);
+  $("#header").prepend(formattedName);
+  $("#header").append(formattedPic);
+  $("#header").append(formattedMessage);
+  $("#topContacts, #footerContacts").append(formattedMobile);
+  $("#topContacts, #footerContacts").append(formattedEmail);
+  $("#topContacts, #footerContacts").append(formattedTwitter);
+  $("#topContacts, #footerContacts").append(formattedGithub);
+};
+
+bio.contacts.display();
 
 
 
 
- var formattedName = HTMLheaderName.replace("%data%", bio.name);
- var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
- var formattedEducationName = HTMLschoolName.replace("%data%", education.lastSchool);
- var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
- var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
- var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
- var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
- var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
- var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-
- $("#header").prepend(formattedRole);
- $("#header").prepend(formattedName);
- $("#header").append(formattedPic);
- $("#header").append(formattedMessage);
- $("#topContacts").append(formattedMobile);
- $("#topContacts").append(formattedEmail);
- $("#topContacts").append(formattedTwitter);
- $("#topContacts").append(formattedGithub);
 
 
-bio.display = function(){
+
+bio.skills.display = function(){
   $("#header").append(HTMLskillsStart);
   bio.skills.forEach(function(skill){
    var formattedSkills = HTMLskills.replace("%data%", skill).replace("%data%", skill).replace("%data%", skill).replace("%data%", skill);
@@ -126,7 +130,7 @@ bio.display = function(){
  })
  };
 
- bio.display();
+bio.skills.display();
 
    work.display = function(){
      work.jobs.forEach(function(job){
@@ -142,8 +146,6 @@ bio.display = function(){
      };
 
      work.display();
-
-     $("#main").append(internationalizeButton);
 
      projects.display = function(){
        projects.projects.forEach(function(project){
@@ -189,6 +191,8 @@ bio.display = function(){
        }
      }
      education.onlineCourses.display();
+
+
 
 
  $("#mapDiv").append(googleMap);

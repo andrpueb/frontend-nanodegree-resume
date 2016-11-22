@@ -37,7 +37,7 @@ h6 {
 
 .education-entry,
 .work-entry,
-.project-entry,
+/*.project-entry, overriden*/
 .online-entry {
   padding: 0 5%;
 }
@@ -173,7 +173,7 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: space-around;
   padding: 10px;
 }
 
@@ -212,6 +212,19 @@ span {
   padding: 5px;
 }
 
+#map {
+  display: block;
+  height: 100%;
+  box-shadow: 1px 10px 12px 7px rgba(0,0,0,0.75);
+}
+
+#mapDiv {
+  height: 400px;
+  width: 70%;
+  padding-bottom: 5%;
+  margin: auto !important;
+}
+
 #lets-connect {
   text-align: center;
 }
@@ -222,11 +235,18 @@ span {
   #lets-connect {
     margin-top: 5%;
   }
+
 }
 
 @media only screen and (max-width:900px) {
   .biopic {
     width: 175px;
+  }
+  #mapDiv{
+    width: 100%;
+  }
+  #map{
+    height: 80%;
   }
 }
 
@@ -240,25 +260,22 @@ span {
   .welcome-message {
     display: none;
   }
+  #projects img{
+    width: 100%;
+  }
 }
 
-#map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
-}
 
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
-}
 
 @media only screen and (min-width: 750px) {
   #skills-h3,
   .biopic {
     display: block;
   }
+  #projects img{
+    width: 250px;
+  }
+
 }
 
 /*Added style*/
@@ -281,7 +298,7 @@ span {
 
 .skillLogo{
   text-align: center;
-  width: 6em;
+  max-width: 4em;
 }
 
 .hoverSkill{
@@ -308,6 +325,12 @@ span {
   background-attachment: fixed;
 }
 
-#projects img{
-  max-width: 20em;
+
+
+.project-entry{
+  background-color: rgba(25,52,65, 0.2);
+  border-radius: 5px;
+  padding: 2%;
+  margin: 2em !important;
+
 }
