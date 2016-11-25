@@ -1,336 +1,319 @@
 @import url(http://weloveiconfonts.com/api/?family=zocial);
 @import url(http://weloveiconfonts.com/api/?family=entypo);
+
 /* zocial */
+
 [class*="zocial-"]:before {
-  font-family: 'zocial', sans-serif;
-  color: #FF6138;
+    font-family: 'zocial', sans-serif;
+    color: #FF6138;
 }
-
-
 
 [class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
-  color: #FF6138;
+    font-family: 'entypo', sans-serif;
+    color: #FF6138;
 }
 
-
-body,
-div,
-ul,
-li,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding:0;
-  margin:0 !important; /*overriding Bootstrap*/
-  font-family: 'Antic', sans-serif;
+body, div, ul, li, p, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0 !important;
+    /*overriding Bootstrap*/
+    font-family: 'Antic', sans-serif;
 }
 
 .clear-fix {
-  /*changed with fixed width*/
-  /*overflow: auto;*/
+    /*changed with fixed width*/
+    /*overflow: auto;*/
 }
 
-.education-entry,
-.work-entry,
+.education-entry, .work-entry,
 /*.project-entry, overriden*/
+
 .online-entry {
-  padding: 0 5%;
+    padding: 0 5%;
 }
 
 h1 {
-  font-size: 40px;
-  color: #BEEB9F !important;
-  line-height: 48px;
-  display: inline;
-  font-weight: lighter;
-  font-family: 'Julius Sans One', sans-serif;
+    font-size: 40px;
+    color: #BEEB9F !important;
+    line-height: 48px;
+    display: inline;
+    font-weight: lighter;
+    font-family: 'Julius Sans One', sans-serif;
 }
 
-
-
 h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #999;
-  line-height: 29px;
-  padding: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #999;
+    line-height: 29px;
+    padding: 10px;
 }
 
 h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #000;
-  line-height: 22px;
+    font-style: italic;
+    font-size: 20px;
+    color: #000;
+    line-height: 22px;
 }
 
 h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 17px;
 }
 
-h2,
-h3,
-h4,
-h5,{
-  padding:10px 5%;
-
+h2, h3, h4, h5, {
+    padding: 10px 5%;
 }
-
 
 .date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: left;
+    font-style: italic;
+    font-size: 14px;
+    color: #999;
+    line-height: 16px;
+    float: left;
 }
 
 .location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
-
+    font-style: italic;
+    font-size: 14px;
+    color: #999;
+    line-height: 16px;
+    float: right;
 }
 
 p {
-  font-size: 14px;
-  color: #333;
-  line-height: 21px;
+    font-size: 14px;
+    color: #333;
+    line-height: 21px;
 }
 
 a {
-  color: #1199c3;
-  text-decoration: none;
-  margin-top: 10px;
-  display: block;
+    color: #1199c3;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
 }
 
 .welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
-  line-height: 28px;
+    font-style: italic;
+    font-size: 18px;
+    color: #f3f3f3;
+    line-height: 28px;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+    color: #f5ae23;
 }
 
-#skills li{
-  align-items: center;
+#skills li {
+    align-items: center;
 }
 
-#skills p{
-  text-align: center;
-  color: white;
+#skills p {
+    text-align: center;
+    color: white;
 }
 
 .orange {
-  background-color: #f5ae23;
+    background-color: #f5ae23;
 }
 
 .orange-text {
-  color: #f5ae23;
+    color: #f5ae23;
 }
 
 .social-text {
-  font-weight: bold;
-  color: #D1DBBD;
+    font-weight: bold;
+    color: #D1DBBD;
 }
 
 .gray {
-  background-color: #f3f3f3;
-  padding-bottom: 10px;
-  clear:both;
+    background-color: #f3f3f3;
+    padding-bottom: 10px;
+    clear: both;
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+    background-color: #4a4a4a;
 }
 
+
 /* TODO: Replace with image later */
+
 #header {
-  background-image: url("../images/lines.jpg");
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100%;
-  height: auto;
+    background-image: url("../images/lines.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    height: auto;
 }
 
 .flex-box {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
 }
 
-.flex-box li{
-  background-color: rgba(25,52,65, 0.5);
-  margin: 1em !important;
+.flex-box li {
+    background-color: rgba(25, 52, 65, 0.5);
+    margin: 1em !important;
 }
 
 .flex-column {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
 }
 
 .center-content {
-  padding: 2.5% 5%;
+    padding: 2.5% 5%;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .biopic {
-  float: left;
-  padding: 10px;
-  width: 200px;
-  display: none;
+    float: left;
+    padding: 10px;
+    width: 200px;
+    display: none;
 }
 
 img {
-  padding: 10px;
+    padding: 10px;
 }
 
 span {
-  padding: 5px;
+    padding: 5px;
 }
 
 #map {
-  display: block;
-  height: 100%;
-  box-shadow: 1px 10px 12px 7px rgba(0,0,0,0.75);
+    display: block;
+    height: 100%;
+    box-shadow: 1px 10px 12px 7px rgba(0, 0, 0, 0.75);
 }
 
 #mapDiv {
-  height: 400px;
-  width: 70%;
-  padding-bottom: 5%;
-  margin: auto !important;
+    height: 400px;
+    width: 70%;
+    padding-bottom: 5%;
+    margin: auto !important;
 }
 
 #lets-connect {
-  text-align: center;
+    text-align: center;
 }
+
+#projects {
+    background-image: url('../images/3dback.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  }
-
+    #lets-connect {
+        margin-top: 5%;
+    }
 }
 
 @media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
-  #mapDiv{
-    width: 100%;
-  }
-  #map{
-    height: 80%;
-  }
+    .biopic {
+        width: 175px;
+    }
+    #mapDiv {
+        width: 100%;
+    }
+    #map {
+        height: 80%;
+    }
+    #header {
+        background-image: url("../images/lines2.jpg");
+    }
+    #projects {
+        background-image: url("../images/3dback2.jpg");
+    }
 }
 
 @media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
-  #projects img{
-    width: 100%;
-  }
+    #lets-connect {
+        margin-top: 10%;
+    }
+    .biopic {
+        width: 150px;
+    }
+    .welcome-message {
+        display: none;
+    }
+    #projects img {
+        width: 100%;
+    }
 }
-
-
 
 @media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
-    display: block;
-  }
-  #projects img{
-    width: 250px;
-  }
-
+    #skills-h3, .biopic {
+        display: block;
+    }
+    #projects img {
+        width: 250px;
+    }
 }
+
 
 /*Added style*/
 
 .role {
-  color: #FFFAD5;
+    color: #FFFAD5;
 }
 
-.flex-row{
-  display: flex;
-  flex-direction: row;
+.flex-row {
+    display: flex;
+    flex-direction: row;
 }
 
-.skill{
-  width: 70px !important;
-  text-align: center;
-  padding: 0 10px 0 0;
-  margin: 10px;
+.skill {
+    width: 70px !important;
+    text-align: center;
+    padding: 0 10px 0 0;
+    margin: 10px;
 }
 
-.skillLogo{
-  text-align: center;
-  max-width: 4em;
+.skillLogo {
+    text-align: center;
+    max-width: 4em;
 }
 
-.hoverSkill{
-  width: 6.5em !important;
+.hoverSkill {
+    width: 6.5em !important;
 }
 
-#workExperience, #projects, #education  {
-  padding: 2% 10%;
+#workExperience, #projects, #education {
+    padding: 2% 10%;
 }
 
-
-#workExperience{
-  box-shadow: inset 0px 1px 3px 3px rgba(0,0,0,0.75);
+#workExperience {
+    box-shadow: inset 0px 1px 3px 3px rgba(0, 0, 0, 0.75);
 }
 
-#education{
-  box-shadow: inset 0px 1px 3px 3px rgba(0,0,0,0.75);
+#education {
+    box-shadow: inset 0px 1px 3px 3px rgba(0, 0, 0, 0.75);
 }
 
-#projects{
-  background-image: url('../images/3dback.jpg');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-
-
-.project-entry{
-  background-color: rgba(25,52,65, 0.2);
-  border-radius: 5px;
-  padding: 2%;
-  margin: 2em !important;
-
+.project-entry {
+    background-color: rgba(25, 52, 65, 0.2);
+    border-radius: 5px;
+    padding: 2%;
+    margin: 2em !important;
 }
