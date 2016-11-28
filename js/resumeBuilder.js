@@ -7,7 +7,6 @@ var bio = {
     "name": "Andres Puentes",
     "role": "Front End Web Developer",
     "welcomeMessage": "Hi! I am Andres Puentes, a London based Junior Web Developer who has been learning all the magic of web development for the past 2 year, contact me to talk about your project! ",
-    "biopic": "images/me.jpg",
     "contacts": {
         "mobile": "+447864968719",
         "email": "andresfpuentes@gmail.com",
@@ -15,25 +14,46 @@ var bio = {
         "twitter": "andrpueb",
         "location": "London",
     },
-    "skills": ["css3", "html5", "javascript", "jquery", "bootstrap", "git", "gulp"]
+    "skills": ["css3", "html5", "javascript", "jquery", "bootstrap", "git", "gulp"],
+    "biopic": "images/me.jpg"
+};
+
+var projects = {
+    projects: [{
+        "title": "ceramind.co",
+        "dates": "2016",
+        "description": "This was my first project, is a website created for a company dedicated to produce refractory ceramic products, was created using HTML, CSS and basic PHP",
+        "images": ["images/project1.jpg", "images/project2.jpg"]
+    }, {
+        "title": "holisticmind.com",
+        "dates": "2016",
+        "description": "I am now working on this big project, is an online shop of natural products and a place were people can meet to share their thoughts about healthy living",
+        "images": ["images/yoga1.jpg", "images/yoga2.jpg"]
+    }]
 };
 
 var education = {
     "schools": [{
             "name": "Escuela Colombiana de Ingenieria",
-            "city": "Bogota, Colombia",
-            "major": "Electronic Engineering",
-            "graduationYear": "2007"
+            "location": "Bogota, Colombia",
+            "degree": "Bachelor of Engineering",
+            "majors": "Electronic Engineering",
+            "dates": "2004-2007",
+            "url": "http://www.escuelaing.edu.co/es/"
         }, {
             "name": "Politecnico Grancolombiano",
-            "city": "Bogota, Colombia",
-            "major": "International Business",
-            "graduationYear": "2012"
+            "location": "Bogota, Colombia",
+            "degree":"Bachelor of Business Administration",
+            "majors": "International Business",
+            "dates": "2007-2012",
+            "url": "http://www.poli.edu.co/"
         }, {
             "name": "LSI",
-            "city": "Auckland, New Zealand",
-            "major": "English for Business",
-            "graduationYear": "2011"
+            "location": "Auckland, New Zealand",
+            "degree":"",
+            "majors": "English for Business",
+            "dates": "2011",
+            "url":"http://www.lsi.edu/en/"
         }
 
     ],
@@ -72,21 +92,9 @@ var work = {
 
 };
 
-var projects = {
-    projects: [{
-        "title": "ceramind.co",
-        "dates": "2016",
-        "description": "This was my first project, is a website created for a company dedicated to produce refractory ceramic products, was created using HTML, CSS and basic PHP",
-        "images": ["images/project1.jpg", "images/project2.jpg"]
-    }, {
-        "title": "holisticmind.com",
-        "dates": "2016",
-        "description": "I am now working on this big project, is an online shop of natural products and a place were people can meet to share their thoughts about healthy living",
-        "images": ["images/yoga1.jpg", "images/yoga2.jpg"]
-    }]
-};
 
-bio.contacts.display = function() {
+
+bio.display = function() {
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     var formattedEducationName = HTMLschoolName.replace("%data%", education.lastSchool);
@@ -104,25 +112,19 @@ bio.contacts.display = function() {
     $("#topContacts, #footerContacts").append(formattedEmail);
     $("#topContacts, #footerContacts").append(formattedTwitter);
     $("#topContacts, #footerContacts").append(formattedGithub);
+    bio.skills.display = function() {
+        $("#header").append(HTMLskillsStart);
+        bio.skills.forEach(function(skill) {
+            var formattedSkills = HTMLskills.replace("%data%", skill).replace("%data%", skill).replace("%data%", skill).replace("%data%", skill);
+            $("#skills").append(formattedSkills);
+        });
+    };
+    bio.skills.display();
 };
 
-bio.contacts.display();
+bio.display();
 
 
-
-
-
-
-
-bio.skills.display = function() {
-    $("#header").append(HTMLskillsStart);
-    bio.skills.forEach(function(skill) {
-        var formattedSkills = HTMLskills.replace("%data%", skill).replace("%data%", skill).replace("%data%", skill).replace("%data%", skill);
-        $("#skills").append(formattedSkills);
-    });
-};
-
-bio.skills.display();
 
 work.display = function() {
     work.jobs.forEach(function(job) {
@@ -161,28 +163,29 @@ education.display = function() {
     education.schools.forEach(function(school) {
         $("#education").append(HTMLschoolStart);
         var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
-        var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.major);
-        var formattedSchoolDate = HTMLschoolDates.replace("%data%", school.graduationYear);
-        var formatteSchoolCity = HTMLschoolLocation.replace("%data%", school.city);
-        $(".education-entry:last").append(formattedSchoolName, formattedSchoolDegree, formattedSchoolDate, formatteSchoolCity);
+        var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
+        var formattedSchoolDate = HTMLschoolDates.replace("%data%", school.dates);
+        var formatteSchoolCity = HTMLschoolLocation.replace("%data%", school.location);
+        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.majors);
+        $(".education-entry:last").append(formattedSchoolName, formattedSchoolDegree, formattedSchoolDate, formatteSchoolCity, formattedSchoolMajor);
     });
+    education.onlineCourses.display = function() {
+        $("#education").append(HTMLonlineClasses);
+        for (var i = 0; i < education.onlineCourses.length; i++) {
+            $("#education").append(HTMLonlineStart);
+            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
+            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
+            var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+            var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
+            $(".online-entry:last").append(formattedOnlineTitle, formattedOnlineSchool, formattedOnlineDates, formattedOnlineUrl);
+        }
+    };
+    education.onlineCourses.display();
 };
 
 education.display();
 
 
-education.onlineCourses.display = function() {
-    $("#education").append(HTMLonlineClasses);
-    for (var i = 0; i < education.onlineCourses.length; i++) {
-        $("#education").append(HTMLonlineStart);
-        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
-        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
-        var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
-        $(".online-entry:last").append(formattedOnlineTitle, formattedOnlineSchool, formattedOnlineDates, formattedOnlineUrl);
-    }
-};
-education.onlineCourses.display();
 
 
 
