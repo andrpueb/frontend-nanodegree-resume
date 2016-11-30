@@ -19,7 +19,7 @@ var bio = {
 };
 
 var projects = {
-    projects: [{
+    "projects": [{
         "title": "ceramind.co",
         "dates": "2016",
         "description": "This was my first project, is a website created for a company dedicated to produce refractory ceramic products, was created using HTML, CSS and basic PHP",
@@ -34,29 +34,27 @@ var projects = {
 
 var education = {
     "schools": [{
-            "name": "Escuela Colombiana de Ingenieria",
-            "location": "Bogota, Colombia",
-            "degree": "Bachelor of Engineering",
-            "majors": "Electronic Engineering",
-            "dates": "2004-2007",
-            "url": "http://www.escuelaing.edu.co/es/"
-        }, {
-            "name": "Politecnico Grancolombiano",
-            "location": "Bogota, Colombia",
-            "degree":"Bachelor of Business Administration",
-            "majors": "International Business",
-            "dates": "2007-2012",
-            "url": "http://www.poli.edu.co/"
-        }, {
-            "name": "LSI",
-            "location": "Auckland, New Zealand",
-            "degree":"",
-            "majors": "English for Business",
-            "dates": "2011",
-            "url":"http://www.lsi.edu/en/"
-        }
-
-    ],
+        "name": "Escuela Colombiana de Ingenieria",
+        "location": "Bogota, Colombia",
+        "degree": "Bachelor of Engineering",
+        "majors": ["ECE" , "CS"],
+        "dates": "2004-2007",
+        "url": "http://www.escuelaing.edu.co/es/"
+    }, {
+        "name": "Politecnico Grancolombiano",
+        "location": "Bogota, Colombia",
+        "degree": "Bachelor of Business Administration",
+        "majors": ["BA" , "EC"],
+        "dates": "2007-2012",
+        "url": "http://www.poli.edu.co/"
+    }, {
+        "name": "LSI",
+        "location": "Auckland, New Zealand",
+        "degree": "",
+        "majors": ["English"],
+        "dates": "2011",
+        "url": "http://www.lsi.edu/en/"
+    }],
     "onlineCourses": [{
         "title": "Front End Web Developer",
         "school": "CodeAcademy",
@@ -76,7 +74,7 @@ var education = {
 };
 
 var work = {
-    jobs: [{
+    "jobs": [{
         "employer": "Kaplan International",
         "title": "Sales Executive",
         "location": "London",
@@ -162,12 +160,12 @@ projects.display();
 education.display = function() {
     education.schools.forEach(function(school) {
         $("#education").append(HTMLschoolStart);
-        var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+        var formattedSchoolName = HTMLschoolName.replace("%data%", school.name).replace("#", school.url);
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
         var formattedSchoolDate = HTMLschoolDates.replace("%data%", school.dates);
         var formatteSchoolCity = HTMLschoolLocation.replace("%data%", school.location);
         var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.majors);
-        $(".education-entry:last").append(formattedSchoolName, formattedSchoolDegree, formattedSchoolDate, formatteSchoolCity, formattedSchoolMajor);
+        $(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree, formattedSchoolDate, formatteSchoolCity, formattedSchoolMajor);
     });
     education.onlineCourses.display = function() {
         $("#education").append(HTMLonlineClasses);
@@ -177,7 +175,7 @@ education.display = function() {
             var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
             var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
             var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
-            $(".online-entry:last").append(formattedOnlineTitle, formattedOnlineSchool, formattedOnlineDates, formattedOnlineUrl);
+            $(".online-entry:last").append(formattedOnlineTitle + formattedOnlineSchool, formattedOnlineDates, formattedOnlineUrl);
         }
     };
     education.onlineCourses.display();
